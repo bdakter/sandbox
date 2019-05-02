@@ -9,3 +9,4 @@ words.each do |w|
 end
 
 alpha.values.each {|i| p i}
+  
