@@ -1,4 +1,11 @@
-foo = {abba:"father", imma:"mother", 1=>"one"}
+words = ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
+          'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
+          'flow', 'neon']
 
-p foo.select {|k,v| (k==:abba) || v=="one" }
- 
+alpha = Hash.new { |h, k| h[k] = [] }
+
+words.each do |w|
+  alpha[w.chars.sort] << w
+end
+
+alpha.values.each {|i| p i}
