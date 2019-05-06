@@ -1,12 +1,16 @@
-words = ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
-          'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
-          'flow', 'neon']
+result = {}
 
-alpha = Hash.new { |h, k| h[k] = [] }
-
-words.each do |w|
-  alpha[w.chars.sort] << w
+words.each do |word|
+  key = word.split('').sort.join
+  if result.has_key?(key)
+    result[key].push(word)
+  else
+    result[key] = [word]
+  end
 end
 
-alpha.values.each {|i| p i}
+result.each_value do |v|
+  puts "------"
+  p v
+end
   
