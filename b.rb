@@ -1,4 +1,10 @@
-foo = {abba:"father", imma:"mother", 1=>"one"}
+#! /usr/bin/env ruby
 
-p foo.select {|k,v| (k==:abba) || v=="one" }
- 
+foo = [
+  %w[ a b c],
+  %w[ x y z]
+]
+
+foo.each_with_index do |(a, b), i|
+  puts 'a=%s b=%s @ %d' % [ a, b, i ]
+end

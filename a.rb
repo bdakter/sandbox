@@ -1,23 +1,18 @@
-list = {
-  "China" => "54,32,44",
-  "Korea" => "55,33,45",
-  "Iraq" => "54,33,45",
-  "Iran" => "54,33,45",
-  "Norway" => "56,32,45",
-  "Finland" => "55,34,45"
-}
+#! /usr/bin/env ruby
 
-# Norway-Finland-Korea-Iran-Iraq-China
+# require 'pry'
 
-def order_countries(list_of_countries = {})
-  country_hash = {}
-  list_of_countries.each do |k,v|
-    country_hash[k] = v.split(",")
+def shuffle_if(arr)
+  if arr.length > 10
+    arr.shuffle! # shuffles in place
+    # require 'pry'; binding.pry
   end
-  p country_hash.sort_by {|k,v| [v[0].to_i, k]}
 end
 
+arr = (1..10).to_a # creates a basic array
+# require 'pry'; binding.pry
+arr = shuffle_if(arr) # re-assigns arr to it's shuffled self?
 
+# binding.pry
 
-
-order_countries(list)
+puts arr.last
