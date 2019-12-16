@@ -1,23 +1,28 @@
 #! /usr/bin/env ruby
 
-cars = {
-  toyota: {
-    sienna: { color: "blue", price: 100 },
-    camry: { color: "tan", price: 50 }
-  },
+module Walkable
 
-  honda: {
-    odyssey: { color: "grey", price: 200 },
-    vibe: { color: "black", price: 300 }
-  }
-}
-
-cars.each do |make, models|
-  puts "\nMfg: #{make.capitalize}"
-  models.each do |name, specs|
-    puts "\n#{name.capitalize}:"
-    specs.each do |k, v|
-      puts "#{k}, #{v}"
+    def walk
+      puts "Let's walk."
     end
-  end
+
 end
+
+class Cat
+  include Walkable
+
+  attr_accessor :name
+
+  def initialize(name)
+   @name = name
+  end
+
+  def greeting
+    puts "Hello! My name is #{name}"
+  end
+  
+end
+
+kitty = Cat.new('Sophie')
+kitty.greeting
+kitty.walk
